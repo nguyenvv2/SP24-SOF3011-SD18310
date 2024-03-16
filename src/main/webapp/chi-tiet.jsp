@@ -15,7 +15,7 @@
 </head>
 <body class="container">
 
-<form action="/sinh-vien/add" method="post">
+<form action="/sinh-vien/update" method="post">
     <div class="mb-3">
         <label class="form-label">Ma sinh vien</label>
         <input type="text" class="form-control" name="maSinhVien" value="${sinhVien.maSinhVien}">
@@ -56,7 +56,7 @@
     <%--            </label>--%>
     <%--        </div>--%>
     <%--    </div>--%>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
 </body>

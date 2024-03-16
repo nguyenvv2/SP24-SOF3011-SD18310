@@ -12,6 +12,7 @@ import java.util.ArrayList;
         "/sinh-vien/trang-chu",// GET
         "/sinh-vien/add",// POST
         "/sinh-vien/detail", //GET
+        "/sinh-vien/update", //POST
 })
 public class HomeServlet extends HttpServlet {
     ArrayList<String> list = new ArrayList<>();
@@ -52,11 +53,29 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String ma = request.getParameter("maSinhVien");
-        String ten = request.getParameter("tenSinhVien");
-        Integer tuoi = Integer.parseInt(request.getParameter("tuoi"));
-        String diaChi = request.getParameter("diaChi");
-        listSinhVien.add(new SinhVien(ma, ten, diaChi, tuoi));
-        response.sendRedirect("/sinh-vien/trang-chu");
+
+        String uri = request.getRequestURI();
+        System.out.println(uri);
+        if (uri.equals("/sinh-vien/add")) {
+            String ma = request.getParameter("maSinhVien");
+            String ten = request.getParameter("tenSinhVien");
+            Integer tuoi = Integer.parseInt(request.getParameter("tuoi"));
+            String diaChi = request.getParameter("diaChi");
+            listSinhVien.add(new SinhVien(ma, ten, diaChi, tuoi));
+            response.sendRedirect("/sinh-vien/trang-chu");
+        } else if (uri.equals("/sinh-vien/update")) {
+            String ma = request.getParameter("maSinhVien");
+            String ten = request.getParameter("tenSinhVien");
+            Integer tuoi = Integer.parseInt(request.getParameter("tuoi"));
+            String diaChi = request.getParameter("diaChi");
+            for (SinhVien sinhVien : listSinhVien) {
+                if (sinhVien.getMaSinhVien().equals(ma)) {
+                    sinhVien.setTenSinhVien(ten);
+                    sinhVien.setTuoi(tuoi);
+                    sinhVien.setDiaChi(diaChi);
+                }
+            }
+            response.sendRedirect("/sinh-vien/trang-chu");
+        }
     }
 }
