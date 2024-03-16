@@ -33,10 +33,11 @@
     </div>
     <div class="mb-3">
         <label for="disabledSelect" class="form-label">Ten lop</label>
-        <select id="disabledSelect" class="form-select">
-            <option>SD123</option>
-            <option>SD124</option>
-            <option>SD125</option>
+        <select id="disabledSelect" class="form-select" name="tenLop">
+            <c:forEach items="${list}" var="s">
+                <option value="${s}">${s}</option>
+            </c:forEach>
+
         </select>
     </div>
     <div class="row">

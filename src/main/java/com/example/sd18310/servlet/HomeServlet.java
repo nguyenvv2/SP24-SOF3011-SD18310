@@ -19,10 +19,10 @@ public class HomeServlet extends HttpServlet {
     ArrayList<SinhVien> listSinhVien = new ArrayList<>();
 
     public HomeServlet() {
-        list.add("A");
-        list.add("Nguyen Van B");
-        list.add("Nguyen Van 2");
-        list.add("Nguyen Van 4");
+        list.add("SD12345");
+        list.add("SD12346");
+        list.add("SD12347");
+        list.add("SD12348");
         SinhVien sinhVien = new SinhVien("Ph12345", "Nguyen Van B", "HCM", 20);
         listSinhVien.add(sinhVien);
         listSinhVien.add(new SinhVien("Ph3211", "Nguyen Thi B", "HN", 23));
@@ -36,7 +36,7 @@ public class HomeServlet extends HttpServlet {
         System.out.println(uri);
         if (uri.equals("/sinh-vien/trang-chu")) {
             request.setAttribute("listSv", listSinhVien);
-            request.setAttribute("list", listSinhVien);
+            request.setAttribute("list", list);
             request.getRequestDispatcher("/home.jsp").forward(request, response);
         } else if (uri.equals("/sinh-vien/detail")) {
             String ma = request.getParameter("maSinhVien");
@@ -61,6 +61,8 @@ public class HomeServlet extends HttpServlet {
             String ten = request.getParameter("tenSinhVien");
             Integer tuoi = Integer.parseInt(request.getParameter("tuoi"));
             String diaChi = request.getParameter("diaChi");
+            String tenLop = request.getParameter("tenLop");
+            System.out.println(tenLop);
             listSinhVien.add(new SinhVien(ma, ten, diaChi, tuoi));
             response.sendRedirect("/sinh-vien/trang-chu");
         } else if (uri.equals("/sinh-vien/update")) {
