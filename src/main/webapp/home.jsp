@@ -15,39 +15,74 @@
 </head>
 <body class="container">
 <form action="/sinh-vien/add" method="post">
-    <label for="">Name</label>
-    <input type="text" name="hoTen">
-    <button type="submit">Submit</button>
+    <div class="mb-3">
+        <label class="form-label">Ma sinh vien</label>
+        <input type="text" class="form-control" name="maSinhVien">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ten sinh vien</label>
+        <input type="text" class="form-control" name="tenSinhVien">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Tuoi</label>
+        <input type="text" class="form-control" name="tuoi">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Dia Chi</label>
+        <input type="text" class="form-control" name="diaChi">
+    </div>
+    <div class="mb-3">
+        <label for="disabledSelect" class="form-label">Ten lop</label>
+        <select id="disabledSelect" class="form-select">
+            <option>SD123</option>
+            <option>SD124</option>
+            <option>SD125</option>
+        </select>
+    </div>
+    <div class="row">
+        <p class="col-4">Gioi tinh
+        </p>
+        <div class="form-check col-4">
+            <input class="form-check-input" type="radio" value="Nam" name="gioiTinh">
+            <label class="form-check-label">
+                Nam
+            </label>
+        </div>
+        <div class="form-check col-4">
+            <input class="form-check-input" type="radio" value="Nu" name="gioiTinh">
+            <label class="form-check-label">
+                Nu
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 <table class="table">
-    <c:forEach items="${list}" var="s" varStatus="i">
+    <thead>
+    <tr>
+        <td>STT</td>
+        <td>Ma sinh vien</td>
+        <td>Ten sinh vien</td>
+        <td>Dia chi</td>
+        <td>Tuoi</td>
+        <td>Chuc nang</td>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="sinhVien" items="${listSv}" varStatus="i">
         <tr>
-            <td>${i.index}</td>
-            <td>${s}</td>
+            <td>${i.index + 1}</td>
+            <td>${sinhVien.maSinhVien}</td>
+            <td>${sinhVien.tenSinhVien}</td>
+            <td>${sinhVien.diaChi}</td>
+            <td>${sinhVien.tuoi}</td>
+            <td>
+                <a href="/sinh-vien/detail?maSinhVien=${sinhVien.maSinhVien}" class="btn btn-dark">Chi tiet</a>
+            </td>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
-<%--<table class="table">--%>
-<%--    <thead>--%>
-<%--    <tr>--%>
-<%--        <td>STT</td>--%>
-<%--        <td>Ma sinh vien</td>--%>
-<%--        <td>Ten sinh vien</td>--%>
-<%--        <td>Dia chi</td>--%>
-<%--        <td>Tuoi</td>--%>
-<%--    </tr>--%>
-<%--    </thead>--%>
-<%--    <tbody>--%>
-<%--    <c:forEach var="sinhVien" items="${listSv}" varStatus="i">--%>
-<%--        <tr>--%>
-<%--            <td>${i.index + 1}</td>--%>
-<%--            <td>${sinhVien.maSinhVien}</td>--%>
-<%--            <td>${sinhVien.tenSinhVien}</td>--%>
-<%--            <td>${sinhVien.diaChi}</td>--%>
-<%--            <td>${sinhVien.tuoi}</td>--%>
-<%--        </tr>--%>
-<%--    </c:forEach>--%>
-<%--    </tbody>--%>
-<%--</table>--%>
 </body>
 </html>
