@@ -67,6 +67,8 @@
         <td>Ten sinh vien</td>
         <td>Dia chi</td>
         <td>Tuoi</td>
+        <td>Lop</td>
+        <td>Gioi Tinh</td>
         <td>Chuc nang</td>
     </tr>
     </thead>
@@ -78,8 +80,11 @@
             <td>${sinhVien.tenSinhVien}</td>
             <td>${sinhVien.diaChi}</td>
             <td>${sinhVien.tuoi}</td>
+            <td>${sinhVien.lop}</td>
+            <td>${sinhVien.gioiTinh}</td>
             <td>
                 <a href="/sinh-vien/detail?maSinhVien=${sinhVien.maSinhVien}" class="btn btn-dark">Chi tiet</a>
+                <a href="/sinh-vien/delete?maSinhVien=${sinhVien.maSinhVien}" class="btn btn-dark">Xoa</a>
             </td>
         </tr>
     </c:forEach>
