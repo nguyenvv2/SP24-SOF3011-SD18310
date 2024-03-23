@@ -69,7 +69,13 @@ public class HomeServlet extends HttpServlet {
     }
 
     private void hienThi(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("listSv", listSinhVien);
+
+        if (listSinhVien.isEmpty()) {
+            request.setAttribute("error", "Danh sach trong");
+        } else {
+            request.setAttribute("listSv", listSinhVien);
+        }
+
         request.setAttribute("list", list);
         request.getRequestDispatcher("/home.jsp").forward(request, response);
     }

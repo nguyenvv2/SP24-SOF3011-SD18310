@@ -26,6 +26,7 @@
                 <td>Ngay tao</td>
                 <td>Tong tien</td>
                 <td>Trang Thai</td>
+                <td>Chuc nang</td>
             </tr>
             </thead>
             <tbody>
@@ -45,10 +46,11 @@
             <tr>
                 <td>STT</td>
                 <td>ID</td>
-                <td>Ten khach hang</td>
-                <td>Ngay tao</td>
+                <td>Ten san pham</td>
+                <td>So luong</td>
+                <td>Gia ban</td>
                 <td>Tong tien</td>
-                <td>Trang Thai</td>
+                <td>Chuc nang</td>
             </tr>
             </thead>
             <tbody>
@@ -71,39 +73,42 @@
                     <label class="mb-3 col-3">Số điện thoại</label>
                     <input type="text" class="col-7">
                 </div>
-                <button>Search</button>
+                <button  class="btn btn-primary">Search</button>
             </div>
             <div class="mb-3">
                 <label class="col-3">Ten Khach hang</label>
-                <input type="text" class="col-7" disabled>
+                <input type="text" class="col-7" readonly>
             </div>
             <div class="mb-3">
                 <label class="col-3">ID Hoa don</label>
-                <input type="text" class="col-7" disabled>
+                <input type="text" class="col-7" readonly>
             </div>
             <div class="mb-3">
                 <label class="col-3">Tong tien</label>
-                <input type="text" class="col-7" disabled>
+                <input type="text" class="col-7" readonly>
             </div>
             <div>
-                <button>Tạo hoá đơn</button>
-                <button>Thanh toán</button>
+                <button  class="btn btn-primary">Tạo hoá đơn</button>
+                <button  class="btn btn-primary">Thanh toán</button>
             </div>
         </div>
 
     </div>
 </div>
 <div>
-    <h2>Danh sách sản phẩm</h2>
+    <h2>Danh sách chi tiếtsản phẩm</h2>
     <table class="table">
         <thead>
         <tr>
             <td>STT</td>
-            <td>ID</td>
-            <td>Ten khach hang</td>
-            <td>Ngay tao</td>
-            <td>Tong tien</td>
+            <td>ID CTSP</td>
+            <td>Ten san pham</td>
+            <td>Mau sac</td>
+            <td>Size</td>
+            <td>Gia ban</td>
+            <td>So luong ton</td>
             <td>Trang Thai</td>
+            <td>Chuc nang</td>
         </tr>
         </thead>
         <tbody>
@@ -112,9 +117,11 @@
             <td>1</td>
             <td>Nguyen Van A</td>
             <td>20/11/2023</td>
+            <td>20/11/2023</td>
+            <td>20/11/2023</td>
             <td>2.000.000đ</td>
             <td>Chua thanh toan</td>
-            <td><button>Chọn mua</button></td>
+            <td><button  class="btn btn-primary">Chọn mua</button></td>
         </tr>
         </tbody>
     </table>
